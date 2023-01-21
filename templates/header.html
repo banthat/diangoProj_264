@@ -1,0 +1,49 @@
+{% load static %}
+{% load fontawesome_5 %}
+{% fontawesome_5_static %}
+
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: #C68FC8">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="javascript:void(0)"><b>Menu</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+
+                <li class="nav-item ">
+                    <a href="{% url 'home' %}" class="nav-link text-white" ><b>{% fa5_icon 'fas fa-home' %}</b></a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       data-bs-toggle="dropdown"><i class="fas fa-list"><b>&nbsp List</b></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'personal' %}"><b>Personal</b></a></li>
+                        <li><a class="dropdown-item" href="{% url 'educational' %}"><b>Educational</b></a></li>
+                        <li><a class="dropdown-item" href="{% url 'interests' %}"><b>Interests</b></a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'sell' %}"><b>Shop</b></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'rolemodel' %}"><b>RoleModel</b></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'showMyData' %}"><b>showMyData</b></a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Search">
+                <button class="btn text-white" type="button" style="background-color: #FBC23F "><b>Search</b></button>
+            </form>
+        </div>
+    </div>
+</nav>
+<br><br>
+

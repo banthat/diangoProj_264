@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+{% block content %}
+    <br>
+
+    <div class="row text">
+        <div class="col-lg-3">
+            <img src="{% static 'image/External.png' %}" width="320px" height="200"
+                 class="img-thumbnail">
+        </div>
+
+        <div class="col-lg-9">
+            <div class="mt-1 p-4 text-white rounded" style="background-color: #51C2D5">
+                <h5><b>Eske Willerslev </b></h5>
+                <p class="alert alert-info">เป็นนักวิทยาศาสตร์ ผู้เชี่ยวชาญด้าน DNA พันธุกรรมและวิวัฒนาการ เป็นผู้อำนวยการศูนย์ GeoGenetics
+              เค้าออกเดินทางไปที่ต่างๆ ทั่วโลก เพื่อศึกษาและทำความเข้าใจเรื่องการอพยพและการแพร่กระจายของมนุษย์
+              เป็นผู้บุกเบิกและเป็นที่ยอมรับของนักวิจัยคนอื่นๆ เค้าประสบความสำเร็จในการศึกษา DNA ที่สกัดจากโครงกระดูกมนุษย์โบราณ
+              เพื่อทำให้เข้าใจประวัติศาสตร์ของมนุษย์มากขึ้น</p>
+            </div>
+
+            <div class="mt-3 p-4 text-white rounded" style="background-color: #FD464A">
+                <p class="alert alert-warning">Eske Willerslev กล่าวว่า "การที่เราจะก้าวไปข้างหน้าได้นั้น เราต้องลองสิ่งใหม่ๆ ลองแล้วลองอีก พยายามแล้วพยายามอีก ความพยายามทำให้สร้างโอกาส
+              ความสำเร็จต้องแลกมาด้วยบางอย่าง เราต้องเสียสละและเสี่ยงที่จะสูญเสีย มันไม่สำคัญหรอกว่าเราจะพลาดกี่ครั้ง ถ้า 1 ใน 200 ครั้งนั้น
+              มันทำให้เราได้ผลลัพธ์ที่ทำให้เราก้าวข้ามขีดจำกัดของวิทยาการ ทำให้เกิดการเปลี่่ยนครั้งใหญ่"</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

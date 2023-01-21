@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load fontawesome_5 %}
+{% fontawesome_5_static %}
+{% load static %}
+<!DOCTYPE html>
+{% block content %}
+    <br>
+    <h6>รหัสนักศึกษา : {{ showID }}</h6>
+    <h6>ชื่อนักศึกษา : {{ showName }}</h6>
+    <h6>ที่อยู่นักศึกษา : {{ showAddress }}</h6>
+    <h6>รหัสนักศึกษา : {{ showTel }}</h6>
+    <h6>เพศ : {{ showGender }}</h6>
+    <h6>วันเกิด : {{ showBirthday }}</h6>
+    <h6>น้ำหนัก : {{ showWeight }}</h6>
+    <h6>ส่วนสูง : {{ showHeight }}</h6>
+    <h6>สถานะ : {{ showStatus }}</h6>
+    <h6>มหาวิทยาลัย : {{ showSchool }}</h6>
+    <br>
+
+    <table width="100%" class="table table-striped">
+        <tr class="text-center table-primary">
+            <td><b>Product Name</b></td>
+            <td><b>Product Price</b></td>
+            <td><b>Product Images</b></td>
+        </tr>
+
+        {% for product in products %}
+            <tr>
+                <td>{{ product.0 }}</td>
+                <td class="text-center">{{ product.1 }}</td>
+                <td class="text-center">{{ product.2 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+    </table>
+
+{% endblock %}
