@@ -55,7 +55,7 @@ def showMyData(request):
     products.append(product)
     product = ['เกิดใหม่เป็นตัวร้ายผู้รักสงบ', 379.00, '../../static/image/book_8.gif']
     products.append(product)
-    product = ['ผมไม่เป็น(โอเมก้า)ของคุณหรอก! (3 เล่มจบ)', 948.00, '../../static/images/book_9.gif']
+    product = ['ผมไม่เป็น(โอเมก้า)ของคุณหรอก! (3 เล่มจบ)', 948.00, '../../static/image/book_9.gif']
     products.append(product)
     product = ['Real Alpha (2 เล่มจบ)', 518.00, '../../static/image/book_10.gif']
     products.append(product)
