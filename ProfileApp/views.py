@@ -39,25 +39,25 @@ def showMyData(request):
 
     products = []
 
-    product = ['บุรุษเต้าหู้สะท้านภพ', 450.00, 'book_1.gif']
+    product = ['บุรุษเต้าหู้สะท้านภพ', 450.00, '../../static/image/book_1.gif']
     products.append(product)
-    product = ['ก็จะดื้อ (2 เล่มจบ)', 559.00, 'book_2.gif']
+    product = ['ก็จะดื้อ (2 เล่มจบ)', 559.00, '../../static/image/book_2.gif']
     products.append(product)
-    product = ['วันๆ ของจิ้งจอกลูกสองก็แบบนี้แหละ!', 429.00, 'book_3.gif']
+    product = ['วันๆ ของจิ้งจอกลูกสองก็แบบนี้แหละ!', 429.00, '../../static/image/book_3.gif']
     products.append(product)
-    product = ['A piece of cake', 289.00, 'book_4.gif']
+    product = ['A piece of cake', 289.00, '../../static/image/book_4.gif']
     products.append(product)
-    product = ['ทีเร็กซ์จะไม่ดื้อ', 399.00, 'book_5.gif']
+    product = ['ทีเร็กซ์จะไม่ดื้อ', 399.00, '../../static/image/book_5.gif']
     products.append(product)
-    product = ['บุรุษเต้าหู้สะท้านภพ', 450.00, 'book_6.gif']
+    product = ['บุรุษเต้าหู้สะท้านภพ', 450.00, '../../static/image/book_6.gif']
     products.append(product)
-    product = ['นับสิบจะจูบ (2 เล่มจบ)', 680.00, 'book_7.gif']
+    product = ['นับสิบจะจูบ (2 เล่มจบ)', 680.00, '../../static/image/book_7.gif']
     products.append(product)
-    product = ['เกิดใหม่เป็นตัวร้ายผู้รักสงบ', 379.00, 'book_8.gif']
+    product = ['เกิดใหม่เป็นตัวร้ายผู้รักสงบ', 379.00, '../../static/image/book_8.gif']
     products.append(product)
-    product = ['อัยย์หลงไน๋', 300.00, 'book_9.gif']
+    product = ['อัยย์หลงไน๋', 300.00, '../../static/image/book_9.gif']
     products.append(product)
-    product = ['Real Alpha (2 เล่มจบ)', 518.00, 'book_10.gif']
+    product = ['Real Alpha (2 เล่มจบ)', 518.00, '../../static/image/book_10.gif']
     products.append(product)
 
     context = {'showID': showID, 'showName': showName, 'showAddress': showAddress, 'showTel': showTel,
