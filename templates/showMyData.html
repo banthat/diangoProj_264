@@ -4,18 +4,21 @@
 {% load static %}
 <!DOCTYPE html>
 {% block content %}
-    <br>
-    <h6>รหัสนักศึกษา : {{ showID }}</h6>
-    <h6>ชื่อนักศึกษา : {{ showName }}</h6>
-    <h6>ที่อยู่นักศึกษา : {{ showAddress }}</h6>
-    <h6>รหัสนักศึกษา : {{ showTel }}</h6>
-    <h6>เพศ : {{ showGender }}</h6>
-    <h6>วันเกิด : {{ showBirthday }}</h6>
-    <h6>น้ำหนัก : {{ showWeight }}</h6>
-    <h6>ส่วนสูง : {{ showHeight }}</h6>
-    <h6>สถานะ : {{ showStatus }}</h6>
-    <h6>มหาวิทยาลัย : {{ showSchool }}</h6>
-    <br>
+    <div class="mt-4 p-2 text-white rounded" style="background-color: #FF6699">
+        <h1 class="text-center"><b>Show My Data</b></h1></div>
+
+    <div id="section1" class="container-fluid text-white" style="padding:30px 20px; background-color: #FBC23F">
+        <h5 class="text-dark">รหัสนักศึกษา : {{ showID }}</h5>
+        <h5 class="text-dark">ชื่อนักศึกษา : {{ showName }}</h5>
+        <h5 class="text-dark">ที่อยู่นักศึกษา : {{ showAddress }}</h5>
+        <h5 class="text-dark">รหัสนักศึกษา : {{ showTel }}</h5>
+        <h5 class="text-dark">เพศ : {{ showGender }}</h5>
+        <h5 class="text-dark">วันเกิด : {{ showBirthday }}</h5>
+        <h5 class="text-dark">น้ำหนัก : {{ showWeight }}</h5>
+        <h5 class="text-dark">ส่วนสูง : {{ showHeight }}</h5>
+        <h5 class="text-dark">สถานะ : {{ showStatus }}</h5>
+        <h5 class="text-dark">มหาวิทยาลัย : {{ showSchool }}</h5>
+    </div>
 
     <table width="100%" class="table table-striped">
         <tr class="text-center table-primary">
@@ -26,7 +29,7 @@
 
         {% for product in products %}
             <tr>
-                <td>{{ product.0 }}</td>
+                <td><b>{{ product.0 }}</b></td>
                 <td class="text-center">{{ product.1 }}</td>
                 <td class="text-center"><img class="img img-thumbnail" src="{{ product.2 }}"></td>
             </tr>
