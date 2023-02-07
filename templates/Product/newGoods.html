@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load fontawesome_5 %}
+{% fontawesome_5_static %}
+
+{% block content %}
+    <br>
+    <h2 class="text-primary text-center bg-white">All Product Information</h2><br>
+    <form method="post" class="form-control">
+    {% csrf_token %}
+    {{ form.as_table }}
+        <br>
+    <div class="text-center">
+        <input type="submit" value="บันทึก" class="btn btn-warning">
+        <input type="reset" value="เคลียร์" class="btn btn-success">
+    </div>
+    </form>
+
+{% endblock %}

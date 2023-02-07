@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load fontawesome_5 %}
+{% fontawesome_5_static %}
+
+{% block content %}
+    <br>
+    <h2 class="text-primary text-center bg-white">All Goods Information</h2><br>
+    <table class="table table-striped">
+        <tr style="background-color: #DEA6D5">
+            <th>รหัสสินค้า</th>
+            <th>ชื่อสินค้า</th>
+            <th>ยี่ห้อ</th>
+            <th>รุ่น</th>
+            <th>ราคาต่อหน่วย</th>
+            <th>คงเหลือ</th>
+            <th>ประเภท</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        {% for goods in goods %}
+            <tr>
+                <td>{{ goods.gid }}</td>
+                <td>{{ goods.name }}</td>
+                <td>{{ goods.brand }}</td>
+                <td>{{ goods.model1 }}</td>
+                <td>{{ goods.price }}</td>
+                <td>{{ goods.net }}</td>
+                <td>{{ goods.goodscategory.gc_name }}</td>
+                <td>
+                    <a href="{% url 'showGoodsOne' goods.gid %}">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'updateGoods' goods.gid %}">
+                        <i class="fas fa-tools"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'updateGoods' goods.gid %}">
+                        <i class="fas fa-dumpster"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+    <div class="row">
+        <div class="col-lg-6 text-lg-start">
+            <a href="{% url 'home' %}" class="btn btn-primary">
+                {% fa5_icon 'fas fa-home' %}&nbsp Home
+            </a>
+        </div>
+        <div class="col-lg-6 text-lg-end">
+            <a href="{% url 'newGoods' %}" class="btn btn-success">
+                {% fa5_icon 'fas fa-plus' %}&nbsp Add Goods
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

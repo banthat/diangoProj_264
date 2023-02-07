@@ -27,17 +27,24 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{% url 'sell' %}"><b>Shop</b></a>
-                </li>
-
-                <li class="nav-item">
                     <a class="nav-link text-white" href="{% url 'rolemodel' %}"><b>RoleModel</b></a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{% url 'showMyData' %}"><b>showMyData</b></a>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button"
+                       data-bs-toggle="dropdown"><b>&nbsp Shop</b></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'sell' %}"><b>Shop</b></a></li>
+                        <li><a class="dropdown-item" href="{% url 'listProduct' %}"><b>List Product</b></a></li>
+                        <li><a class="dropdown-item" href="{% url 'showGoodsList' %}"><b>List Goods</b></a></li>
+                    </ul>
+                </li>
             </ul>
+
             <form class="d-flex">
                 <input class="form-control me-2" type="text" placeholder="Search">
                 <button class="btn text-white" type="button" style="background-color: #FBC23F "><b>Search</b></button>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 def home(request):
@@ -66,3 +66,91 @@ def showMyData(request):
                'showHeight': showHeight, 'showStatus': showStatus, 'showSchool': showSchool, 'products': products}
 
     return render(request, 'showMyData.html', context)
+
+lstOurProduct = []
+
+from ProfileApp.models import *
+from ProfileApp.forms import *
+
+def listProduct(request):
+    context = {'products': lstOurProduct}
+    return render(request, 'listProduct.html', context)
+
+def inputProduct(request):
+    if request.method == "POST":
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form = form.cleaned_data
+            id = form.get('id')
+            brand = form.get('brand')
+            model = form.get('model')
+            color = form.get('color')
+            type = form.get('type')
+            price = form.get('price')
+
+            if price <= 5000:
+                warranty = 1
+            elif price <= 10000:
+                warranty = 2
+            elif price <= 50000:
+                warranty = 3
+            else:
+                warranty = 4
+
+            vat = price * 0.07
+            net = price + vat
+            pd = Product(id, brand, model, color, type, price, warranty, vat, net)
+            lstOurProduct.append(pd)
+            return redirect('listProduct')
+        else:
+            form = ProductForm(form)
+    else:
+        form = ProductForm()
+        context = {'form': form}
+        return render(request, 'inputProduct.html', context)
+
+def showGoodsList(request):
+    goods = Goods.objects.all()
+    context = {'goods': goods}
+    return render(request, 'Product/showGoodsList.html', context)
+
+def showGoodsOne(request, gid):
+    goods = Goods.objects.get(gid=gid)
+    context = {'goods': goods}
+    return render(request, 'Product/showGoodsOne.html', context)
+
+from django.contrib import messages
+
+def newGoods(request):
+    if request.method == "POST":
+        form = GoodsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'บันทึกข้อมูลสินค้าสำเร็จแล้ว')
+            return redirect('showGoodsList')
+        else:
+            goods = Goods.objects.get(gid=form.gid)
+            if goods:
+                messages.add_message(request, messages.WARNING, 'รหัสสินค้าซ้ำกับกับที่มีอยู่แล้ว')
+            else:
+                messages.add_message(request, messages.WARNING, 'ข้อมูลไม่ถูกต้อง/ไม่สมบูรณ์ ไม่สามารถบันทึกได้')
+    else:
+        form = GoodsForm()
+    context = {'form': form}
+    return render(request, 'Product/newGoods.html', context)
+
+from django.shortcuts import get_object_or_404
+def updateGoods(request, gid):
+    obj = get_object_or_404(Goods, gid=gid)
+    form = GoodsForm(request.POST or None, instance=obj)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'ปรับปรุงข้อมูลสินค้าสำเร็จ')
+            return redirect('showGoodsList')
+        else:
+            messages.add_message(request, messages.WARNING, 'ข้อมูลไม่ถูกต้อง/ไม่สามารถปรับปรุงได้')
+    form.updateForm()
+    context = {'form': form}
+    return render(request, 'Product/updateGoods.html', context)
+

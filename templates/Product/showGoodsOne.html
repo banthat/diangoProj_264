@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load fontawesome_5 %}
+{% fontawesome_5_static %}
+
+{% block content %}
+    <br>
+    <h2 class="text-primary text-center bg-white">Product Information</h2><br>
+    <h2 class="text-white text-center" style="background-color: #B567AC">
+        {{ goods.gid }} : {{ goods.name }}
+    </h2>
+    <table class="table table-striped">
+        <tr>
+            <td>ประเภท</td>
+            <td>{{ goods.goodscategory.gc_name }}</td>
+        </tr>
+        <tr>
+            <td>รหัสสินค้า</td>
+            <td>{{ goods.gid }}</td>
+        </tr>
+        <tr>
+            <td>ชื่อสินค้า</td>
+            <td>{{ goods.name }}</td>
+        </tr>
+        <tr>
+            <td>ยี่ห้อ</td>
+            <td>{{ goods.brand }}</td>
+        </tr>
+        <tr>
+            <td>รุ่น</td>
+            <td>{{ goods.model1 }}</td>
+        </tr>
+        <tr>
+            <td>ราคา</td>
+            <td>{{ goods.price }}</td>
+        </tr>
+        <tr>
+            <td>จำนวน</td>
+            <td>{{ goods.net }}</td>
+        </tr>
+        <tr>
+            <td>รายละเอียด</td>
+            <td>{{ goods.property }}</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <div class="text-center">
+        <div class="col-lg-6 text-lg-start">
+            <button class="btn btn-secondary" onclick="history.back()">
+                <i class="fas fa-backward"></i>
+            </button>
+            <a href="{% url 'home' %}" class="btn btn-primary">
+                {% fa5_icon 'fas fa-home' %}&nbsp Home</a>
+        </div>
+    </div>
+
+{% endblock %}
